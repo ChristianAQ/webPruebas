@@ -1,0 +1,8 @@
+#Virtual enviromets
+venv/
+# Database files
+db.sqlite3
+#Pycharm stuff
+.idea/
+#Python bytecode files
+*.pyc

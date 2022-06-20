@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block body %}
+    {% if photos_list|length > 100 %}
+        {% include "photos/includes/photo_loop.html" %}
+    {% else %}
+        {% include "photos/contenidoInicio.html" %}
+    {% endif %}
+
+    </div>
+{% endblock %}
+
+
+

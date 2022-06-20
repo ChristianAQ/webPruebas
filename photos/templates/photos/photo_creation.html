@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %} Crear foto {% endblock %}
+{% block body %}
+    <h1>Crear foto</h1>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        {% if message %} <p class="fw-bolder" style="color: green; font-weight: bold;"> {{ message|safe }} </p>
+        {% endif %}
+        <button type="submit">Crear foto</button>
+
+        <div id="myModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-body">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
