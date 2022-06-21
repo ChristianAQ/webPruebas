@@ -4,6 +4,9 @@ from rest_framework.routers import DefaultRouter
 from photos.api import PhotoViewSet
 from photos.views import HomeView, PhotoDetailView, PhotoCreationView, PhotoListView
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 router = DefaultRouter()
 router.register('api/1.0/photos', PhotoViewSet, basename='api_photos_')
 
@@ -14,4 +17,4 @@ urlpatterns = [
     path('', HomeView.as_view(), name='photos_home'),
 
     path('', include(router.urls))
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

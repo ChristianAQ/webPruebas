@@ -1,20 +1,23 @@
 
 
-<a class="logo" href="{% url 'photos_home' %}"><img src="static/images/navbar/bbLogo.png"></a>
+<div class="container-fluid">
+    <a class="logo link-to-portfolio hover-target" href="{% url 'photos_home' %}">
+        <img src="static/images/navbar/bbLogo.png" alt="LogoBB">
+    </a>
 
+    <input class="menu-icon-per" type="checkbox" id="menu-icon" name="menu-icon"/>
+    <label for="menu-icon"></label>
+    <nav class="nav">
+        <ul class="pt-5">
+            {% if user.is_authenticated %}
+                <li><a href="{% url 'photos_my_photos' %}">Mis fotos</a></li>
+                <li><a href="{% url 'photos_create' %}">Crear foto</a></li>
+                <li><a href="{% url 'users_logout' %}" class="logout">Logout</a></li>
+            {% else %}
+                <li><a href="{% url 'users_login' %}">Login</a></li>
+            {% endif %}
+        </ul>
+    </nav>
 
-<input class="menu-icon-per" type="checkbox" id="menu-icon" name="menu-icon"/>
-<label for="menu-icon"></label>
-<nav class="nav">
-    <ul class="pt-5">
-        {% if user.is_authenticated %}
-            <li><a href="{% url 'photos_my_photos' %}">Mis fotos</a></li>
-            <li><a href="{% url 'photos_create' %}">Crear foto</a></li>
-            <li><a href="{% url 'users_logout' %}">Logout</a></li>
-        {% else %}
-            <li><a href="{% url 'users_login' %}">Login</a></li>
-        {% endif %}
-    </ul>
-</nav>
-
+</div>
 

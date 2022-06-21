@@ -1,5 +1,34 @@
 {% extends "base.html" %}
 {% block body %}
+    <div class="section ">
+        <div class="hero-section">
+            <div class="about-text hover-target">about</div>
+            <div class="contact-text hover-target">contact</div>
+            <div class="section-center">
+                <div class="container-fluid">
+                    <div class="row justify-content-center">
+                        <div class="col-12 text-center">
+                            <h1>Big<br>Bang</h1>
+                        </div>
+                        <div class="col-12 text-center mb-2">
+                            <div class="dancing"><span>photography</span></div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <p>
+                                <span class="travel hover-target">travel</span>
+                                <span class="wildlife hover-target">wildlife</span>
+                                <span class="nature hover-target">nature</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!------condicion para que de primera aparezca el photo_loop o si no el contenido por defecto------->
     {% if photos_list|length > 100 %}
         {% include "photos/includes/photo_loop.html" %}
     {% else %}
