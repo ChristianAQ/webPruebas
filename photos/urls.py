@@ -15,6 +15,5 @@ urlpatterns = [
     path('photos/', PhotoListView.as_view(), name='photos_my_photos'),
     re_path(r'^photos/(?P<pk>[0-9]+)$', PhotoDetailView.as_view(), name='photos_detail'),
     path('', HomeView.as_view(), name='photos_home'),
-
     path('', include(router.urls))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

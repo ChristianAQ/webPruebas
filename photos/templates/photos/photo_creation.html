@@ -2,22 +2,23 @@
 
 {% block title %} Crear foto {% endblock %}
 {% block body %}
-    <h1>Crear foto</h1>
-    <form method="post" novalidate>
-        {% csrf_token %}
-        {{ form.as_p }}
-        {% if message %} <p class="fw-bolder" style="color: green; font-weight: bold;"> {{ message|safe }} </p>
-        {% endif %}
-        <button type="submit">Crear foto</button>
 
-        <div id="myModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-body">
+    <div class="container" style="max-width: 70%; margin-top: 120px">
+        <div class="card">
+            <h2 class="card-header text-center">Creación de fotos</h2>
+            <div class="card-body " style="padding-left: 60px">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    <div class="form-group">
+                        {{ form.as_p }}
+                        {% if message %}
+                            <p class="fw-bolder" style="color: green; font-weight: bold;"> {{ message|safe }} </p>
+                        {% endif %}
                     </div>
-                </div>
+                    <button class="btn btn-success" type="submit">Crear foto</button>
+                    <input type="reset" class="btn btn-danger" id="boton" value="Reiniciar">
+                </form>
             </div>
         </div>
-    </form>
+    </div>
 {% endblock %}

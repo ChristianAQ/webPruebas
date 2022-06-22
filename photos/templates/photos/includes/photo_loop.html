@@ -1,21 +1,17 @@
+<div class="container " style="margin-top: 120px">
+    <ul class="card-list-ch">
+        {% for photo in photos_list %}
+            <li class="card-ch">
+                <a class="card-image-ch" href="{% url 'photos_detail' photo.pk %}"
+                   style="background-image:url({{ photo.url }});">
+                </a>
+                <div style="background-color: white">
+                    <h2 style="color: #212121">{{ photo.name }}</h2>
+                    <p class="text-dark p-2">{{ photo.description }}</p>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
 
 
-{% for photo in photos_list %}
-
-    <div class="section-fluid-main">
-		<div class="section-row">
-			<div class="section-col">
-				<div class="section">
-					<div class="section-in">
-                        <a href="{% url 'photos_detail' photo.pk %}">
-						    <img src="{{ photo.url }}" alt="{{ photo.name }}">
-                        </a>
-					</div>
-				</div>
-			</div>
-			<div class="hover-text">
-				<h2>{{ photo.name }}</h2>
-			</div>
-        </div>
-    </div>
-{% endfor %}

@@ -11,11 +11,6 @@ from django.views.generic import ListView
 from django.urls import reverse
 
 
-def saludo(request):
-    nombre = request.GET.get('nombre')
-    apellido = request.GET.get('apellido')
-    return HttpResponse("Hello {0} {1}".format(nombre, apellido))
-
 
 class HomeView(View):
     def get(self, request):
@@ -26,7 +21,7 @@ class HomeView(View):
         """
         # Recupera todas las fotos de la base de datos
         photos = Photo.objects.filter(visibility=VISIBILITY_PUBLIC).order_by('-created_at')
-        context = {'photos_list': photos[:8]}
+        context = {'photos_list': photos[:2]}
         return render(request, 'photos/home.html', context)
 
 
